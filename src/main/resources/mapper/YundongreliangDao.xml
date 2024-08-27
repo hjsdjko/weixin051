@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.YundongreliangDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.YundongreliangEntity" id="yundongreliangMap">
+        <result property="yundongmingcheng" column="yundongmingcheng"/>
+        <result property="yundongshizhang" column="yundongshizhang"/>
+        <result property="xiaohaoreliang" column="xiaohaoreliang"/>
+        <result property="yundongjianyi" column="yundongjianyi"/>
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.YundongreliangView" >
+
+		SELECT  yundongreliang.* FROM yundongreliang  yundongreliang 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.YundongreliangView" >
+		SELECT * FROM yundongreliang  yundongreliang <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

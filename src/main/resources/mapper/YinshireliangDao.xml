@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.YinshireliangDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.YinshireliangEntity" id="yinshireliangMap">
+        <result property="jiluriqi" column="jiluriqi"/>
+        <result property="shiwumingcheng" column="shiwumingcheng"/>
+        <result property="reliang" column="reliang"/>
+        <result property="danbaizhi" column="danbaizhi"/>
+        <result property="zhifang" column="zhifang"/>
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.YinshireliangView" >
+
+		SELECT  yinshireliang.* FROM yinshireliang  yinshireliang 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.YinshireliangView" >
+		SELECT * FROM yinshireliang  yinshireliang <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
